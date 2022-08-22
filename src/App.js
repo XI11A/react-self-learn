@@ -1,3 +1,4 @@
+import React from "react";
 import Expenses from "./components/Expenses";
 
 function App() {
@@ -8,11 +9,11 @@ function App() {
       amount: 94.12,
       date: new Date(2022, 5, 14),
     },
-    { 
+    {
       id: "e2",
       title: "New TV",
       amount: 799.49,
-      date: new Date(2022, 6, 12)
+      date: new Date(2022, 6, 12),
     },
     {
       id: "e3",
@@ -28,12 +29,25 @@ function App() {
     },
   ];
 
-  return (
-    <div>
-      <h2>Just Trying to show the Component in the Web Page</h2>
-      <Expenses items={expenses} />      
-    </div>
+  return React.createElement(
+    "div",
+    {},
+    React.createElement(
+      "h2",
+      { align: "center" },
+      "Expenses Tracker React Application"
+    ),
+    React.createElement(
+      Expenses,
+      { items: expenses }
+    )
   );
+  // return (
+  //   <div>
+  //     <h2 align='center'>Expenses Tracker React Application</h2>
+  //     <Expenses items={expenses} />
+  //   </div>
+  // );
 }
 
 export default App;
