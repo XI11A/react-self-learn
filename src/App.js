@@ -1,33 +1,39 @@
 import React from "react";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
   const expenses = [
     {
       id: "e1",
       title: "Mobile Recharge",
-      amount: 94.12,
+      amount: 239,
       date: new Date(2022, 5, 14),
     },
     {
       id: "e2",
       title: "New TV",
-      amount: 799.49,
+      amount: 14999.99,
       date: new Date(2022, 6, 12),
     },
     {
       id: "e3",
       title: "Car Insurance",
-      amount: 294.67,
+      amount: 4597.42,
       date: new Date(2022, 7, 28),
     },
     {
       id: "e4",
       title: "New Desk (Wooden)",
-      amount: 450,
+      amount: 4772,
       date: new Date(2022, 8, 12),
     },
   ];
+
+  function addExpenseHandler (expense){
+    console.log('In App.js');
+    console.log(expense)
+  }
 
   // return React.createElement(
   //   "div",
@@ -44,7 +50,7 @@ function App() {
   // );
   return (
     <div>
-      <h2 align='center'>Expenses Tracker React Application</h2>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
